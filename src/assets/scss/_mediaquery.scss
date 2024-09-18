@@ -1,0 +1,25 @@
+@mixin respond-to($media) {
+    @if $media == 'small' {
+      @media (max-width: 600px) {
+        @content;
+      }
+    } @else if $media == 'medium' {
+      @media (min-width: 601px) and (max-width: 1200px) {
+        @content;
+      }
+    } @else if $media == 'large' {
+      @media (min-width: 1201px) {
+        @content;
+      }
+    } @else if $media == 'medium-new' {
+      @media (min-width: 601px) and (max-width: 800px) {
+        @content;
+      }
+  }
+  @else if $media == 'medium-products' {
+    @media (min-width: 801px) and (max-width: 1200px) {
+      @content;
+    }
+}
+
+}

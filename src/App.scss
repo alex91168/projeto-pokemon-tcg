@@ -1,0 +1,18 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+body, html {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: black;
+    font-family: "fontmain", serif;
+  }
+
+  .eb-garamond-fontmain {
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }

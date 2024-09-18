@@ -1,0 +1,446 @@
+@import './colors', './mediaquery';
+
+
+.cards-container {
+  display: flex;
+  width: 100%;
+  height: 700px;
+  padding: 20px 0;
+  margin: 70px 0;
+  position: relative;
+  justify-content: center;
+  animation: cards-container-appear 1s ease-in;
+
+  @keyframes cards-container-appear {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100%{
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+  }
+
+  .img-moving-out {
+    position: absolute;
+    right: -100px;
+    top: -50px;
+    z-index: 1;
+    @media (min-width:658px) and (max-width: 1200px){
+      right: -150px;
+    }
+    @media (max-width:657px){
+      display: none;
+    }
+    @include respond-to('small') {
+      display: none;
+    }
+  }
+
+  .card-box {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border-bottom: 1px solid $color-primary;
+    border-top: 1px solid $color-primary;
+    border-radius: 50px;
+    padding: 20px;
+    position: relative;
+
+    @include respond-to('medium'){
+      padding: 5px;
+    }
+    @include respond-to('small'){
+      padding: 5px;
+    }
+
+    .card-text {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      color: white;
+      margin: 20px 0;
+
+      @include respond-to('medium') {
+        align-items: center;
+        width: 80%;
+      }
+      @include respond-to('small') {
+        align-items: center;
+      }
+
+      h1 {
+        color: $color-primary;
+        font-size: 66px;
+        font-weight: 800;
+        @include respond-to('medium') {
+          font-size: 40px;
+        }
+        @include respond-to('small') {
+          font-size: 30px;
+        }
+        #hidden-text {
+          color: $color-fourty;
+          text-shadow: 
+            -1px -1px 0 $color-primary,  
+            1px -1px 0 $color-primary,
+            -1px  1px 0 $color-primary,
+            1px  1px 0 $color-primary;
+        }
+        #fates-text {
+          color: rgba(255, 240, 106, 0.658);
+          text-shadow: 
+            -1px -1px 0 #ce7705,  
+            1px -1px 0 $color-primary,
+            -1px  1px 0 $color-primary,
+            1px  1px 0 $color-primary;
+        }
+      }
+      p {
+        padding: 0 20px;
+        width: 50%;
+        @include respond-to('medium') {
+          width: 80%;
+        }
+        @include respond-to('small') {
+          width: 100%;
+          font-size: 15px;
+        }
+      }
+    }
+    #button-card-box {
+      display: flex;
+      position: absolute;
+      right: 25%;
+      height: 8%;
+      bottom: 40%;
+      border-top: 1px solid $color-primary ;
+      border-bottom: 1px solid $color-primary ;
+      width: 15%;
+      z-index: 3;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      cursor: pointer;
+      color: $color-fourty;
+      #button-card{
+        border: none;
+        background-color: transparent;
+        color: white;
+        font-size: 20px;
+      }
+      @media (min-width:601px) and (max-width:714px){
+        width: 30%;
+        right: 0;
+        bottom: 55%;
+      }
+      @media (min-width:715px) and (max-width:767px){
+        width: 25%;
+        bottom: 55%;
+        right: 20%;
+      }
+      @media (min-width:768px) and (max-width:1200px){
+        bottom: 60%;
+        width: 25%;
+      }
+      @include respond-to('small') {
+        bottom: 58%;
+        right: 25%;
+        width: 50%;
+      }
+    }
+    #button-card-box:hover{
+      color:$color-primary;
+    }    
+    .card-details{
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      align-items: center;
+      width: 20%;
+      height: 30%;
+      right: 47%;
+      bottom: 20%;
+      color: $color-primary;
+      animation: card-details-appear 0.5s ease-in;
+      @media (min-width:1120px) and (max-width:1200px) {
+        right: 400px;
+        width: 25%;
+        bottom: 25%;
+      }
+      @media (min-width:978px) and (max-width:1119px) {
+        right: 200px;
+        width: 40%;
+        bottom: 25%;
+      }
+      @media (min-width:652px) and (max-width:977px) {
+        right: 100px;
+        width: 30%;
+        bottom: 25%;
+      }
+      @media (min-width:600px) and (max-width:651px) {
+        right: 50px;
+        width: 30%;
+        bottom: 20%;
+      }
+      h3 {
+        font-weight: 700;
+      }
+
+      @keyframes card-details-appear {
+        0% {
+          transform: translateY(30%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        
+      }
+
+      p{
+        color: $color-fourty;
+      }
+    }  
+
+    .carrossel-container-main {
+      position: relative;
+
+      .carousel-main-box {
+        width: 230px;
+        left: 70px;
+        top: 40px;
+        position: relative;
+        z-index: 3;
+        @include respond-to('medium'){
+          left: 20px;
+          top: 15px
+        }
+
+        .carousel-inner {
+          position: relative;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+          position: absolute;
+          z-index: 2;
+        }
+
+        .carousel-control-prev {
+          left: -50px;
+        }
+
+        .carousel-control-next {
+          right: -300px;
+
+          @media (min-width:750px) and (max-width:900px){
+            right: -400px;
+          }
+          @media (min-width:700px) and (max-width:749px){
+            right: -300px;
+          }
+          @media (min-width:601px) and (max-width:699px){
+            right: -250px;
+          }
+        }
+      }
+
+      .stars-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+        display: flex;
+        @include respond-to('medium'){
+          left: 20px;
+          top: 20px
+        }
+
+        #star-f {
+          position: absolute;
+          top: 100px;
+          left: 50px;
+          width: 30px;
+          @include respond-to('medium'){
+            left: -20px;
+            top: 20px
+          }
+        }
+        #star-fi {
+          position: absolute;
+          width: 40px;
+          left: 305px;
+          top: 25px;
+          @include respond-to('medium'){
+            left: 190px;
+            top: -10px
+          }
+        }
+        #star-fir {
+          position: absolute;
+          width: 35px;
+          left: 315px;
+          top: 65px;
+          @include respond-to('medium'){
+            left: 230px;
+            top: 0px
+          }
+        }
+        #star-firt {
+          position: absolute;
+          width: 45px;
+          left: 270px;
+          top: 40px;
+          @include respond-to('medium'){
+            left: 200px;
+            top: 20px
+          }
+        }
+        #star-firs {
+          position: absolute;
+          bottom: -25px;
+          left: 292px;
+          width: 45px;
+          @include respond-to('medium'){
+            left: 200px;
+            bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#button-card-box::before{
+  content: '';
+  z-index: 2;
+  background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+  position: absolute;
+  width: 30%;
+  height: 53px;
+  top: -1px;
+  left: 0;
+  cursor: pointer;
+}
+#button-card-box::after{
+  content: '';
+  z-index: 2;
+  background: linear-gradient(-90deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+  position: absolute;
+  width: 30%;
+  height: 53px;
+  top: -1px;
+  right: 0;
+  cursor: pointer;
+}
+
+.effect-swiper-pulsing-1{
+  position: absolute;
+  z-index: 0;
+  width: 1px;
+  height: 1px;
+  left: 210px;
+  bottom: 100px;
+  animation: pulsing-1 5s infinite;
+
+  @include respond-to('medium'){
+    left: 120px;
+    bottom: 150px;
+  }
+}
+@keyframes pulsing-1 {
+  0% {
+    box-shadow: 1px 1px 150px 70px rgb(144,175,217);
+  }
+  50% {
+    box-shadow: 1px 1px 150px 125px rgb(144,175,217);
+  }
+  100% {
+    box-shadow: 1px 1px 150px 70px rgb(144,175,217);
+  }
+  
+}
+.effect-swiper-pulsing-2{
+  position: absolute;
+  z-index: 0;
+  width: 1px;
+  height: 1px;
+  left: 210px;
+  bottom: 100px;
+  animation: pulsing-2 5s infinite;
+  @include respond-to('medium'){
+    left: 120px;
+    bottom: 150px;
+  }
+}
+@keyframes pulsing-2 {
+  0% {
+    box-shadow: 1px 1px 150px 70px rgb(96,97,114);
+  }
+  50% {
+    box-shadow: 1px 1px 150px 125px rgb(96,97,114);
+  }
+  100% {
+    box-shadow: 1px 1px 150px 70px rgb(96,97,114);
+  }
+  
+}
+.effect-swiper-pulsing-3{
+  position: absolute;
+  z-index: 0;
+  width: 1px;
+  height: 1px;
+  left: 210px;
+  bottom: 100px;
+  animation: pulsing-3 5s infinite;
+  @include respond-to('medium'){
+    left: 120px;
+    bottom: 150px;
+  }
+}
+@keyframes pulsing-3 {
+  0% {
+    box-shadow: 1px 1px 150px 70px rgb(133,199,243);
+  }
+  50% {
+    box-shadow: 1px 1px 150px 125px rgb(133,199,243);
+  }
+  100% {
+    box-shadow: 1px 1px 150px 70px rgb(133,199,243);
+  }
+  
+}
+.effect-swiper-pulsing-4{
+  position: absolute;
+  z-index: 0;
+  width: 1px;
+  height: 1px;
+  left: 210px;
+  bottom: 100px;
+  animation: pulsing-4 5s infinite;
+  @include respond-to('medium'){
+    left: 120px;
+    bottom: 150px;
+  }
+}
+@keyframes pulsing-4{
+  0% {
+    box-shadow: 1px 1px 150px 70px violet;
+  }
+  50% {
+    box-shadow: 1px 1px 150px 125px violet;
+  }
+  100% {
+    box-shadow: 1px 1px 150px 70px violet;
+  }
+  
+}
+
