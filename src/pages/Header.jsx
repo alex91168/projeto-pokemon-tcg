@@ -9,10 +9,10 @@ export default function Header() {
         <ol>
           <div id='li-1'>
             <Link id='header-link-text' to='/'>Inicio</Link>
-            <Link id='header-link-text' to=''>Galeria</Link>
+            <Link id='header-link-text' to=''>Saiba mais</Link>
           </div>
           <div id='li-2'>
-            <Link id='header-link-text' to=''>Saiba mais</Link>
+            <Link id='header-link-text' to='/gallery'>Galeria</Link>
             <Link id='header-link-text' to=''>Preferencias</Link>
           </div>
         </ol>

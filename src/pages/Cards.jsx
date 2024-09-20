@@ -21,7 +21,6 @@ export default function Cards() {
     {id:1, name:"Charizard-GX Shiny", desc:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ratione reiciendis necessitatibus ducimus omnis deleniti.", img:SV49},
     {id:2, name:"sdsdsds", desc:"sdsds3as2", img:SV69},
     {id:3, name:"asdsdss", desc:"sdsds32sd", img:SV76},
-    {id:4, name:"23sdssd", desc:"sdsdssds32", img:Card},
   ]; 
   return (
     <>  
@@ -53,7 +52,8 @@ export default function Cards() {
               {listCards.map((item, index) => 
                 (<Carousel.Item key={item.id}> 
                   <img
-                  className="d-block w-100"
+                  //className="d-block w-100"
+                  id="carousel-img-card"
                   src={item.img}
                   alt={`Slide ${index + 1}`}/> 
                 </Carousel.Item>

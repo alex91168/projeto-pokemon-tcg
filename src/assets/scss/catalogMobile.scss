@@ -1,0 +1,67 @@
+@import './colors';
+
+.catalog-container-main{
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    .gallery-cards {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        .card-holder-box{
+            display: flex;
+            margin: 20px;
+            width: 80%;
+            height: 320px;
+            align-items: center;
+            .gallery-card-details{
+                display: flex;
+                //position: relative;
+                flex-direction: row;
+                width: 100%;
+                height: 90%;
+                #card-details-main {
+                    display: flex;
+                    //position: relative;
+                    width: 0;
+                    height: 100%;
+                    //background: white;
+                    #card-details-box{
+                        display: none;
+                        padding: 20px;
+                        flex-direction: column;
+                        align-items: center;
+                        color: white;
+                    }
+                }
+                #card-details-main.active{
+                    width: 100%;
+                    border-top: 2px solid $color-primary;
+                    border-bottom: 2px solid $color-primary;
+                    border-right: 2px solid $color-primary;
+                    border-radius: 2%;
+                }
+                #card-details-box.active{
+                    display: flex !important;
+                }
+                #teste2 {
+                    display: flex;
+                    position: relative;
+                    align-items: center;
+                }
+                #teste2::after{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    border-style: solid;
+                    border-width: 25px 40px 0 40px;
+                    margin: auto;
+                    transform: rotate(-90deg);
+                    border-color: $color-primary transparent transparent transparent;
+                }
+            }
+        }
+    }
+}

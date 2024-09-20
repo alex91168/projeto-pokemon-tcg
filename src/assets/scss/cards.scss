@@ -53,7 +53,9 @@
       padding: 5px;
     }
     @include respond-to('small'){
+      width: 95%;
       padding: 5px;
+      border-radius: 30px;
     }
 
     .card-text {
@@ -148,7 +150,7 @@
       }
       @include respond-to('small') {
         bottom: 58%;
-        right: 25%;
+        right: 10%;
         width: 50%;
       }
     }
@@ -189,7 +191,11 @@
       h3 {
         font-weight: 700;
       }
-
+      @include respond-to ('small'){
+        right: 10px;
+        width: 40%;
+        font-size: 14px;
+      }
       @keyframes card-details-appear {
         0% {
           transform: translateY(30%);
@@ -199,9 +205,7 @@
           transform: translateY(0);
           opacity: 1;
         }
-        
       }
-
       p{
         color: $color-fourty;
       }
@@ -210,31 +214,40 @@
     .carrossel-container-main {
       position: relative;
 
+        #carousel-img-card {
+          width: 230px;
+          @include respond-to('small'){ 
+            width: 180px;
+          }
+        }
       .carousel-main-box {
         width: 230px;
         left: 70px;
         top: 40px;
         position: relative;
         z-index: 3;
-        @include respond-to('medium'){
-          left: 20px;
-          top: 15px
-        }
-
-        .carousel-inner {
-          position: relative;
-        }
-
-        .carousel-control-prev,
-        .carousel-control-next {
-          position: absolute;
-          z-index: 2;
-        }
-
-        .carousel-control-prev {
-          left: -50px;
-        }
-
+          @include respond-to('medium'){
+            left: 20px;
+            top: 15px
+          }
+          @include respond-to('small'){ //alterar
+            left: 20px;
+            top: 65px
+          }
+          .carousel-inner {
+            position: relative;
+          }
+          .carousel-control-prev,
+          .carousel-control-next {
+            position: absolute;
+            z-index: 2;
+          }
+          .carousel-control-prev {
+            left: -50px;
+            @include respond-to('small'){
+              left: -40px;
+            }
+          }
         .carousel-control-next {
           right: -300px;
 
@@ -246,6 +259,9 @@
           }
           @media (min-width:601px) and (max-width:699px){
             right: -250px;
+          }
+          @include respond-to('small'){
+            right: -130px;
           }
         }
       }
@@ -263,7 +279,10 @@
           left: 20px;
           top: 20px
         }
-
+        @include respond-to('small'){
+          left: -47px;
+          top: 20px
+        }
         #star-f {
           position: absolute;
           top: 100px;
@@ -283,6 +302,10 @@
             left: 190px;
             top: -10px
           }
+          @include respond-to('small'){
+            left: 190px;
+            top: 20px
+          }
         }
         #star-fir {
           position: absolute;
@@ -292,6 +315,10 @@
           @include respond-to('medium'){
             left: 230px;
             top: 0px
+          }
+          @include respond-to('small'){
+            left: 230px;
+            top:30px
           }
         }
         #star-firt {
@@ -303,6 +330,11 @@
             left: 200px;
             top: 20px
           }
+          @include respond-to('small'){
+            left: 210px;
+            top:60px;
+            width: 30px;
+          }
         }
         #star-firs {
           position: absolute;
@@ -312,6 +344,10 @@
           @include respond-to('medium'){
             left: 200px;
             bottom: 0px;
+          }
+          @include respond-to('small'){
+            left: 230px;
+            bottom: -25px;
           }
         }
       }
@@ -355,19 +391,39 @@
     left: 120px;
     bottom: 150px;
   }
+  @include respond-to('small'){
+    left: 100px;
+    bottom: 70px;
+    animation: pulsing-1-mediaQuery 5s infinite;
+  }
 }
+
+$color-keyframe1: rgb(144,175,217);
+$color-keyframe2: rgb(96,97,114);
+$color-keyframe3: rgb(133,199,243);
 @keyframes pulsing-1 {
   0% {
-    box-shadow: 1px 1px 150px 70px rgb(144,175,217);
+    box-shadow: 1px 1px 150px 70px $color-keyframe1;
   }
   50% {
-    box-shadow: 1px 1px 150px 125px rgb(144,175,217);
+    box-shadow: 1px 1px 150px 100px $color-keyframe1;
   }
   100% {
-    box-shadow: 1px 1px 150px 70px rgb(144,175,217);
+    box-shadow: 1px 1px 150px 70px $color-keyframe1;
   }
-  
 }
+@keyframes pulsing-1-mediaQuery {
+  0% {
+    box-shadow: 1px 1px 90px 60px rgb(144,175,217);
+  }
+  50% {
+    box-shadow: 1px 1px 90px 90px rgb(144,175,217);
+  }
+  100% {
+    box-shadow: 1px 1px 90px 60px rgb(144,175,217);
+  }
+}
+
 .effect-swiper-pulsing-2{
   position: absolute;
   z-index: 0;
@@ -380,6 +436,11 @@
     left: 120px;
     bottom: 150px;
   }
+  @include respond-to('small'){
+    left: 100px;
+    bottom: 70px;
+    animation: pulsing-2-mediaQuery 5s infinite;
+  }
 }
 @keyframes pulsing-2 {
   0% {
@@ -391,7 +452,17 @@
   100% {
     box-shadow: 1px 1px 150px 70px rgb(96,97,114);
   }
-  
+}
+@keyframes pulsing-2-mediaQuery {
+  0% {
+    box-shadow: 1px 1px 90px 60px $color-keyframe2;
+  }
+  50% {
+    box-shadow: 1px 1px 90px 90px $color-keyframe2;
+  }
+  100% {
+    box-shadow: 1px 1px 90px 60px $color-keyframe2;
+  }
 }
 .effect-swiper-pulsing-3{
   position: absolute;
@@ -405,6 +476,11 @@
     left: 120px;
     bottom: 150px;
   }
+  @include respond-to('small'){
+    left: 100px;
+    bottom: 70px;
+    animation: pulsing-3-mediaQuery 5s infinite;
+  }
 }
 @keyframes pulsing-3 {
   0% {
@@ -416,7 +492,17 @@
   100% {
     box-shadow: 1px 1px 150px 70px rgb(133,199,243);
   }
-  
+}
+@keyframes pulsing-3-mediaQuery {
+  0% {
+    box-shadow: 1px 1px 90px 60px $color-keyframe3;
+  }
+  50% {
+    box-shadow: 1px 1px 90px 90px $color-keyframe3;
+  }
+  100% {
+    box-shadow: 1px 1px 90px 60px $color-keyframe3;
+  }
 }
 .effect-swiper-pulsing-4{
   position: absolute;
@@ -431,16 +517,5 @@
     bottom: 150px;
   }
 }
-@keyframes pulsing-4{
-  0% {
-    box-shadow: 1px 1px 150px 70px violet;
-  }
-  50% {
-    box-shadow: 1px 1px 150px 125px violet;
-  }
-  100% {
-    box-shadow: 1px 1px 150px 70px violet;
-  }
-  
-}
+
 

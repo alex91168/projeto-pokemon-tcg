@@ -1,4 +1,4 @@
-@import './colors';
+@import './colors', './mediaquery';
 
 header {
     display: flex;
@@ -7,20 +7,26 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
-    //gap: 20px;
-    //background-color: rgba(12, 11, 11, 0.822);
-    z-index: 1; //fit in 
+    z-index: 1; 
     border-bottom: 1px solid $color-primary;
     border-radius: 10%;
     ol{
         display: flex;
-        //position: relative;
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         font-size: 20px;
         padding: 0 50px;
+        @include respond-to ('medium') {
+            gap: 40px;
+            padding: 0;
+        }
+        @include respond-to ('small') {
+            padding: 0;
+            gap: 10px;
+        }
+
 
         #li-1, #li-2{
             display: flex;
@@ -30,6 +36,19 @@ header {
             justify-content: space-around;
             padding: 20px;
             animation: details-nav 1.2s ease-in;
+            @include respond-to ('medium') {
+                gap: 100px;
+                width: 40%;
+                font-size: 16px;
+            }
+            @include respond-to ('small') {
+                font-size: 14px;
+                //justify-content: space-around;
+                width: 100%;
+                gap: 10px;
+                padding: 0;
+                //height: 50px;
+            }
         }
     }
     ul {
@@ -53,9 +72,14 @@ header {
         justify-content: center;
         top: 40px;
         animation: iconmain 1.2s ease-in-out;
-
+        @include respond-to ('small'){
+            top: 60px;
+        }
         img{
             width: 200px;
+            @include respond-to ('small'){
+                width: 140px;
+            }
         }
     }
 }

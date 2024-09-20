@@ -66,7 +66,7 @@ export default function App() {
                 >
                     {products.map((product, index) => (
                         <SwiperSlide key={product.id} >
-                            <img id='swiper-slide-img' style={{width:"200px"}} src={product.img2} alt={product.name} />
+                            <img id='swiper-slide-img' src={product.img2} alt={product.name} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

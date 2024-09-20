@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "name": "2sda",
+      "desc": "R$ 23,00",
+      "skill1": "sda",
+      "skill2": "sdad",
+      "skill3": "sadasd",
+      "skill4": "asdasd",
+      "type": "tipo1, tipo2",
+      "img": "https://firebasestorage.googleapis.com/v0/b/hidden-fates-wiki.appspot.com/o/19.png?alt=media&token=38cfa2ad-235b-42f7-9def-8d63bb49bc3a,"
+    },
+    {
+        "id": 3,
+        "name": "2sda",
+        "desc": "R$ 23,00",
+        "skill1": "sda",
+        "skill2": "sdad",
+        "skill3": "sadasd",
+        "skill4": "asdasd",
+        "type": "tipo1, tipo3",
+        "img": "https://firebasestorage.googleapis.com/v0/b/hidden-fates-wiki.appspot.com/o/1.png?alt=media&token=99b22634-2ec4-47d4-881c-057cd4ad35fc,"
+      }
+  ]

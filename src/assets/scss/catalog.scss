@@ -1,0 +1,172 @@
+@import './colors', './mediaquery';
+
+
+#main-gallery-border{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    height: 30px;
+    border-top: 1px solid $color-primary;
+    border-radius: 100px;
+    @include respond-to ('small'){
+       width: 95%;
+    }
+}
+#main-gallery-border-down{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    height: 30px;
+    border-bottom: 1px solid $color-primary;
+    border-radius: 100px;
+    @include respond-to ('small'){
+        width: 95%;
+     }
+}
+.main-gallery-container{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 20px;
+    gap: 50px;
+    justify-content: center;
+    @include respond-to ('small'){
+        padding: 20px ;
+        gap: 10px;
+        justify-content: start;
+    }
+    
+    #card-box-gallery{
+        display: flex;
+        width: 250px;
+        height: auto;
+        flex-direction: column;
+        //padding: 20px 0;
+        position: relative;
+        animation: cards-pop-up 1s ease;
+        @include respond-to ('small'){
+            width: 200px;
+        }
+        
+        @keyframes cards-pop-up{
+            0% {opacity: 0;}100% {opacity: 1;}
+        }
+        #card-img-gallery{
+            display: flex;
+            @include respond-to ('small'){
+                width: 200px;
+            }
+        }
+        #card-details-gallery{
+            display: block;
+            height: 0;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: black;
+            border-bottom: 1px solid $color-primary;
+            border-left: 1px solid $color-primary;
+            border-right: 1px solid $color-primary;
+            border-radius: 3%;
+            z-index: 2;
+            transition: height 1s ease-out;
+            @include respond-to ('small'){
+                display: none; // criar um para a direita
+            }
+            
+            #card-details-text{
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                color: $color-fourty;
+                overflow: hidden;
+            }
+        }
+        #card-details-gallery.active{
+            height: 350px;
+            border-radius: 3%;
+            z-index: 2;
+            background-color: black;
+        }
+
+        #card-details-text.active{
+            display: flex !important;
+            opacity: 1;
+            animation: in-out-gallery 2s ease;
+        }
+        
+        @keyframes in-out-gallery {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #btn-details{
+            display: flex;
+            position: absolute;
+            left: 34%;
+            bottom: -26px;
+            border-style: solid;
+            border-width: 25px 40px 0 40px;
+            border-color: $color-primary transparent transparent transparent;
+        }
+        #testing2{
+            display: flex;
+            top: -28px;
+            left: -17px;
+            position: absolute;
+            color: white;
+            #product-swiper-border-gallery{
+                position: absolute;
+                left: 7.15px;
+                bottom: -20px;
+                margin: auto;
+                display: inline-block;
+                animation: up-down-arrow 1.2s infinite;
+                width: 0;
+                height: 0;
+                z-index: 20;
+                border-style: solid;
+                border-width: 10px 10px 0 10px;
+                border-color: $color-primary transparent transparent transparent;
+            }
+            @keyframes up-down-arrow {
+                0% {
+                    bottom: -20px;
+                }
+                50% {
+                    bottom: -23px; 
+                }
+                100% {
+                    bottom: -20px;
+                }
+            }
+            #product-swiper-border-gallery.active{
+                transform: rotate(180deg);
+                bottom: -15px;
+                animation: none;
+            }
+            .product-swiper-border-black-gallery{
+                position: absolute;
+                left: -23px;
+                margin: auto;
+                bottom: -27px;
+                border-style: solid;
+                border-width: 25px 40px 0 40px;
+                border-color: #000000 transparent transparent transparent;
+                z-index: 1;
+                width: 0;
+                height: 0;
+            }
+        }
+        #testing2.active{
+            display: flex !important;
+        }
+    }
+}
