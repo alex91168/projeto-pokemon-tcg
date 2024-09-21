@@ -1,5 +1,5 @@
 import '../assets/scss/products.scss';
-import Gengar from '../assets/images/Gengar.png';
+import Gengar from '../assets/images/gengar.png';
 //produtos remover quando usar realtime
 import Produtos from '../assets/images/hiddenfates-1.png';
 import Produtos2 from '../assets/images/produto-2.png';

@@ -43,11 +43,9 @@ header {
             }
             @include respond-to ('small') {
                 font-size: 14px;
-                //justify-content: space-around;
                 width: 100%;
                 gap: 10px;
                 padding: 0;
-                //height: 50px;
             }
         }
     }
@@ -60,15 +58,12 @@ header {
         font-weight: 700;
     }
     #header-link-text:hover{
-        //border-radius: 10%;
         color: $color-primary;
-        //background-color: rgba(0, 0, 0, 0.411);
     }
     .icon-main{
         display: flex;
         position: absolute;
         margin: auto;
-        //width: 100%;
         justify-content: center;
         top: 40px;
         animation: iconmain 1.2s ease-in-out;

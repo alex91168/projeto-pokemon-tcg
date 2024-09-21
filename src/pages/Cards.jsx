@@ -1,12 +1,12 @@
 import React, {act, useState} from 'react';
 import '../assets/scss/cards.scss';
 import Mismagius from '../assets/images/429.png';
-import Card from '../assets/images/carta.png';
 import SV49 from '../assets/images/SV49.png';
 import SV69 from '../assets/images/SV69.png';
 import SV76 from '../assets/images/SV76.png';
 import Star from '../assets/images/star-icon.png';
 import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom'
 
 export default function Cards() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -33,10 +33,11 @@ export default function Cards() {
             <h1>Galeria <span id="hidden-text">Hidden</span><span id="fates-text">Fates</span></h1>
             <p>A expansão especial Hidden Fates foi lançada em agosto de 2019. Os pacotes não podiam ser comprados individualmente em caixas de booster e continham 68 cartas, 94 cartas da Shiny Vault e 1 carta secreta. Entre as cartas notáveis estão Charizard-GX Full Art Holo, Umbreon-GX e Sylveon-GX.</p>
           </div>
+          <Link id='card-link-text' to='/gallery'>
           <div id='button-card-box'>
-            Ver galeria 
-           {/*<button id='button-card'>Ver galeria</button>*/} 
+           Ver galeria 
           </div>
+          </Link>
           <div className='card-details' key={activeIndex}>
             <h3>{listCards[activeIndex].name}</h3>
             <p>{listCards[activeIndex].desc}</p>
