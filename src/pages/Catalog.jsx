@@ -22,7 +22,7 @@ export default function Catalog({results = []}) {
                         <span>{x.rarity}</span>
                     </div>
                     <div id='btn-details' onClick={() => activeDetails(x.localId)}>
-                        <span id='testing2' className={isDetails === x.localId ? 'active' : '' }>
+                        <span id='btn-border-details' className={isDetails === x.localId ? 'active' : '' }>
                             <div className='product-swiper-border-black-gallery'></div>
                             <div id='product-swiper-border-gallery'
                             className={isDetails === x.localId ? 'active' : '' }></div>

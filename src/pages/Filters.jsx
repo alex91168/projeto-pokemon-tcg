@@ -86,9 +86,10 @@ export default function Filters() {
             setResults(cards)
         }
     };
-///
-const [isTrainerChecked, setIsTrainerChecked] = useState(false);
+    
+    const [isTrainerChecked, setIsTrainerChecked] = useState(false);
     const [isGxChecked, setisGxChecked] = useState(false);
+
     const handleCheckboxChange = () => {
         
         setIsTrainerChecked(prev => !prev);
@@ -116,7 +117,7 @@ const [isTrainerChecked, setIsTrainerChecked] = useState(false);
 
         setResults(filteredResults)
     }, [isTrainerChecked, isGxChecked, query, cards]);
-//////
+
     const [typeP, setTypeP] = useState(new Set())
     const [isTypeSelected, setIsTypeSelected] = useState(new Set())
 
@@ -131,6 +132,7 @@ const [isTrainerChecked, setIsTrainerChecked] = useState(false);
                 const newSelectedTypes = new Set(prev)
                 if(newSelectedTypes.has(type)) {
                     newSelectedTypes.delete(type);
+                    console.log("uncheck")
                 } else {
                     newSelectedTypes.add(type);
                 }
@@ -170,20 +172,23 @@ const [isTrainerChecked, setIsTrainerChecked] = useState(false);
         'Metal': { pt: 'Metal', img: metalImage },
         'Dragon': { pt: 'Dragão', img: dragonImage }
     };
+    const removerFiltro = () => {
+    setIsTypeSelected(new Set())
+    setIsTrainerChecked(false)
+    setisGxChecked (false)
+    }
 
   return (
     <>
     {loading ? (
         <div className='loading-main'>
             <div>
-                
                 <div id='loading-svg'></div>
                 <img id='loading-img' src={Loading} alt="" style={{width:200, height:200}}/>
             </div>
-            
         </div>
-    ):
-    (<>
+    ):(
+    <>
     <div className='filter-main-container'>
         <div className="filter-main-box">
             <div className='search-input-box'>
@@ -236,6 +241,9 @@ const [isTrainerChecked, setIsTrainerChecked] = useState(false);
                                 </label>
                             </div>
                         )})}
+                </div>
+                <div className='filter-remove-button'>
+                <button id='filter-remove' onClick={removerFiltro}>Remover filtros</button>
                 </div>
             </div>
         </div>

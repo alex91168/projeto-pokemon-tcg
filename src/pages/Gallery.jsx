@@ -20,8 +20,8 @@ export default function Gallery() {
     <Header />
     <div ref={galleryRef}></div>
     <div className='scroll-gallery' >
-      <div className='up-gallery' onClick={scrollToTop}>Up</div>
-      <div className='down-gallery' onClick={scrollToBottom}>Down</div>
+      <div className='up-gallery' onClick={scrollToTop}></div>
+      <div className='down-gallery' onClick={scrollToBottom}></div>
     </div>
     
     <div className='filter-gallery-container'>

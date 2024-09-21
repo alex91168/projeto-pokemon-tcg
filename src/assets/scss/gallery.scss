@@ -1,4 +1,4 @@
-@import './mediaquery';
+@import './colors', './mediaquery';
 
 .filter-gallery-container{
     display: flex;
@@ -12,27 +12,65 @@
 .scroll-gallery{
     display: flex;
     flex-direction: column;
+    position: relative;
     z-index: 10;
     position: fixed;
     right: 50px;
     bottom: 10px;
     width: 50px;
     height: 100px;
-    background-color: red;
     @include respond-to ('small') {
         right: 20px;
     }
-    .up-gallery{
+    .down-gallery, .up-gallery{
+        position: absolute;
         display: flex;
-        width: 100%;
-        height: 50%;
-        background-color: blue;
+        cursor: pointer;
+        margin: auto;
+        display: inline-block;
+        //animation: up-down-arrow 1.2s infinite;
+        width: 0;
+        height: 0;
+        z-index: 20;
+        border-style: solid;
+        border-width: 25px 20px 0 20px;
+        border-color: $color-primary transparent transparent transparent;
+    }
+    .up-gallery{
+        transform: rotate(180deg);
+        top: 0;
+    }
+    .up-gallery:hover{
+        animation: moving-up 1s infinite;
     }
     .down-gallery{
-        display: flex;
-        width: 100%;
-        height: 50%;
-        background-color: green;
+        bottom: 25px;
+    }
+    .down-gallery:hover{
+        animation: moving-down 1s infinite;
+    }
+}
+
+@keyframes moving-up {
+    0% {
+        top: 0;
+    }
+    50%{
+        top: -5px;
+    }
+    100%{
+        top: 0;
+    }
+}
+@keyframes moving-down {
+    0% {
+        bottom: 25px;
+    }
+    50%{
+        bottom: 20px;
+    }
+    100%{
+        bottom: 25px;
     }
 }
 
