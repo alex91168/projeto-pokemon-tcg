@@ -3,17 +3,17 @@ import '../assets/scss/filters.scss'
 import Fuse from 'fuse.js';
 import Catalog from './Catalog'
 
-import grassImage from '../assets/images/Grass-type.png';
-import fireImage from '../assets/images/Fire-type.png';
-import waterImage from '../assets/images/Water-type.png';
-import lightningImage from '../assets/images/Lightning-type.png';
-import psychicImage from '../assets/images/Psychic-type.png';
+import grassImage from '../assets/images/grass-type.png';
+import fireImage from '../assets/images/fire-type.png';
+import waterImage from '../assets/images/water-type.png';
+import lightningImage from '../assets/images/lightning-type.png';
+import psychicImage from '../assets/images/psychic-type.png';
 import fightingImage from '../assets/images/fighter-type.png';
-import fairyImage from '../assets/images/Fairy-type.png';
-import colorlessImage from '../assets/images/Colorless-type.png';
-import darknessImage from '../assets/images/Darkness-type.png';
-import metalImage from '../assets/images/Metal-type.png';
-import dragonImage from '../assets/images/Dragon-type.png';
+import fairyImage from '../assets/images/fairy-type.png';
+import colorlessImage from '../assets/images/colorless-type.png';
+import darknessImage from '../assets/images/darkness-type.png';
+import metalImage from '../assets/images/metal-type.png';
+import dragonImage from '../assets/images/dragon-type.png';
 import Loading from '../assets/images/loading.png'
 
 export default function Filters() {
