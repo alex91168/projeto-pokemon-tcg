@@ -21,5 +21,9 @@ Para o desenvolvimento deste site utilizei as seguintes tecnologias:
 ---
 
 Imagens:
-![Imagens em diferentes dispositivos](src/assets/images/iPhone.jpeg)(src/assets/images/iPad.jpeg)("src/assets/images/MacBook.jpeg)
+<div>
+    <img src="src/assets/images/iPhone.jpeg" alt="iPhone" style="margin: 10px;"/>
+    <img src="src/assets/images/iPad.jpeg" alt="iPad" style="margin: 10px;"/>
+    <img src="src/assets/images/MacBook.jpeg" alt="MacBook" style="margin: 10px;"/>
+</div>
 
