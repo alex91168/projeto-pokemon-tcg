@@ -20,7 +20,7 @@ Para o desenvolvimento deste site utilizei as seguintes tecnologias:
 - Sass;
 ---
 
-Imagens:
+**Imagens:**
 <div>
     <img src="src/assets/images/iPhone.jpeg" alt="iPhone" style="margin: 10px;"/>
     <img src="src/assets/images/iPad.jpeg" alt="iPad" style="margin: 10px;"/>
