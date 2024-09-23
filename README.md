@@ -21,7 +21,7 @@ Para o desenvolvimento deste site utilizei as seguintes tecnologias:
 ---
 
 Imagens:
-<div style="display: flex; justify-content: center; flex-direction: row;">
+<div style="display: flex; justify-content: center; flex-direction: row; width:300;">
     <img src="src/assets/images/iPhone.jpeg" alt="iPhone" style="margin: 10px;"/>
     <img src="src/assets/images/iPad.jpeg" alt="iPad" style="margin: 10px;"/>
     <img src="src/assets/images/MacBook.jpeg" alt="MacBook" style="margin: 10px;"/>
