@@ -58,9 +58,10 @@ export default function Filters() {
                 localId: x.localId,
                 rarity: x.rarity,
                 suffix: x.suffix,
-                types: x.types
+                types: x.types,
+                attacks: x.attacks
             }));
-            setCards(filteredCards);
+            setCards(filteredCards)
             setResults(filteredCards);
             setLoading(false);
         }
@@ -132,7 +133,6 @@ export default function Filters() {
                 const newSelectedTypes = new Set(prev)
                 if(newSelectedTypes.has(type)) {
                     newSelectedTypes.delete(type);
-                    console.log("uncheck")
                 } else {
                     newSelectedTypes.add(type);
                 }
@@ -177,7 +177,15 @@ export default function Filters() {
     setIsTrainerChecked(false)
     setisGxChecked (false)
     }
+    const [filterHidden, setFilterHidden] = useState(false);
 
+    const showFilterContainer = () => {
+        setFilterHidden(prev => !prev);
+    } 
+    const hiddenMobile = () => {
+        setFilterHidden(false);
+    }
+    console.log(typeP)
   return (
     <>
     {loading ? (
@@ -197,8 +205,14 @@ export default function Filters() {
                 placeholder='Filter por cartas'
                 onChange={searching}
                 />
+                <div className='filter-mobile'>
+                    <button 
+                        id='filter-mobile-btn' 
+                        onClick={showFilterContainer}> <span>Filtros <i className="bi bi-funnel"></i></span>
+                    </button>
+                </div>                
             </div>
-            <div className='types-filter-container'>
+            <div id='types-filter-container' className={filterHidden ? 'active' : ''} >
                 <div className='types-filter-box'>
                     <div className="type-box">
                         <label htmlFor="GX" className={isGxChecked ? 'selected' : ''}>
@@ -242,12 +256,29 @@ export default function Filters() {
                             </div>
                         )})}
                 </div>
-                <div className='filter-remove-button'>
-                <button id='filter-remove' onClick={removerFiltro}>Remover filtros</button>
+                <div id='hidden-filter-container-mobile'>
+                    <button 
+                     onClick={hiddenMobile}>
+                        Ocultar 
+                        <i className="bi bi-caret-up-fill"></i>
+                     </button>
                 </div>
+                <div className='filter-remove-button'>
+                    <button 
+                        id='filter-remove' 
+                        onClick={removerFiltro}>Remover filtros
+                    </button>
+                </div>
+            </div>
+            <div className="mobile-filter-container-main">
+                <button
+                    id='filter-remove'
+                    onClick={removerFiltro}>Remover filtros
+                </button>
             </div>
         </div>
     </div>
+
     <Catalog results={results}/>
     </>)}
     </>

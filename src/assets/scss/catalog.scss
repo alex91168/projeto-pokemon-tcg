@@ -32,7 +32,7 @@
     gap: 50px;
     justify-content: center;
     @include respond-to ('small'){
-        padding: 20px ;
+        padding: 10px ;
         gap: 10px;
         justify-content: start;
     }
@@ -46,16 +46,57 @@
         position: relative;
         animation: cards-pop-up 1s ease;
         @include respond-to ('small'){
-            width: 200px;
+            width: 450px;
+            flex-direction: row;
+            align-items: center;
+            height: 300px;
         }
-        
         @keyframes cards-pop-up{
             0% {opacity: 0;}100% {opacity: 1;}
+        }
+        .mobile-card-details{
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            //align-items: center;
+            padding: 0 0 0 5px;
+            margin: 0 0 10px 0;
+            height: 300px;
+            color: white;
+            overflow: auto;
+            h2{
+                color: $color-primary;
+                font-size: 23px;
+                font-weight: 800;
+            }
+            span{
+                font-size: 12px;
+            }
+            #rarity-mobile-card-detais{
+                display: flex;
+            }
+            @include respond-to ('small'){
+                display: flex;
+            }
         }
         #card-img-gallery{
             display: flex;
             @include respond-to ('small'){
+                display: none;
+                width: 220px;
+                //height: 250px;
+            }
+        }
+        .card-img-mobile{
+            display: none;
+            width: 100%;
+            height: 100%;
+            img{
                 width: 200px;
+                height: 275px;
+            }
+            @include respond-to ('small'){
+                display: flex;
             }
         }
         #card-details-gallery{
@@ -73,7 +114,7 @@
             z-index: 2;
             transition: height 1s ease-out;
             @include respond-to ('small'){
-                display: none; // criar um para a direita
+                display: none; 
             }
             
             #card-details-text{
@@ -86,7 +127,7 @@
             }
         }
         #card-details-gallery.active{
-            height: 350px;
+            height: auto;
             border-radius: 3%;
             z-index: 2;
             background-color: black;
@@ -165,8 +206,18 @@
                 height: 0;
             }
         }
-        #testing2.active{
-            display: flex !important;
-        }
     }
+}
+
+.attacks-card-mobile{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+.attacks-card-details{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
 }
