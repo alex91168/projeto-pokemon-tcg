@@ -18,10 +18,25 @@ export default function Cards() {
   }  
 
   const listCards = [
-    {id:1, name:"Charizard-GX Shiny", desc:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda ratione reiciendis necessitatibus ducimus omnis deleniti.", img:SV49},
-    {id:2, name:"sdsdsds", desc:"sdsds3as2", img:SV69},
-    {id:3, name:"asdsdss", desc:"sdsds32sd", img:SV76},
-  ]; 
+    {
+      id: 1,
+      name: "Charizard-GX",
+      desc: "A icônica Charizard-GX da coleção Shining Legends é um favorito entre colecionadores, simbolizando força e determinação com suas habilidades poderosas e design impressionante.",
+      img: SV49,
+    },
+    {
+      id: 2,
+      name: "Umbreon-GX",
+      desc: "Umbreon-GX é a escolha perfeita para fãs de Eevee, com sua arte sombria e táticas astutas que cativam jogadores e colecionadores, destacando-se em qualquer batalha.",
+      img: SV69,
+    },
+    {
+      id: 3,
+      name: "Sylveon-GX",
+      desc: "Sylveon-GX combina um design encantador com habilidades estratégicas, fazendo dela uma das cartas mais desejadas, especialmente entre os fãs de Eevee e suas evoluções.",
+      img: SV76,
+    }
+  ];
   return (
     <>  
       <div className='cards-container'>
@@ -30,7 +45,7 @@ export default function Cards() {
         <div className='product-swiper-border-black-top'></div>
         <div className='product-swiper-border-top'></div>
           <div className="card-text">
-            <h1>Galeria <span id="hidden-text">Hidden</span><span id="fates-text">Fates</span></h1>
+            <h1>Galeria <span id="hidden-text">Hidden</span><span id="fates-text">Fates</span> <span className='stars-bootstrap'><i class="bi bi-stars"></i></span></h1>
             <p>A expansão especial Hidden Fates foi lançada em agosto de 2019. Os pacotes não podiam ser comprados individualmente em caixas de booster e continham 68 cartas, 94 cartas da Shiny Vault e 1 carta secreta. Entre as cartas notáveis estão Charizard-GX Full Art Holo, Umbreon-GX e Sylveon-GX.</p>
           </div>
           <Link id='card-link-text' to='/gallery'>

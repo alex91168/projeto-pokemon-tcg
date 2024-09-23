@@ -65,6 +65,7 @@
       align-items: center;
       color: white;
       margin: 20px 0;
+      position: relative;
 
       @include respond-to('medium') {
         align-items: center;
@@ -83,6 +84,20 @@
         }
         @include respond-to('small') {
           font-size: 30px;
+        }
+        .stars-bootstrap{
+          position: absolute;
+          right: 200px;
+          top: -25px;
+          color: $color-fourty;
+          @include respond-to('medium') {
+            right: 30px;
+            top: -15px;
+          }
+          @include respond-to('small') {
+            right: 30px;
+            top: -15px;
+          }
         }
         #hidden-text {
           color: $color-fourty;
@@ -141,19 +156,10 @@
         color: white;
         font-size: 20px;
       }
-      @media (min-width:601px) and (max-width:714px){
+      @include respond-to('medium') {
+        bottom: 58%;
+        right: 10%;
         width: 30%;
-        right: 0;
-        bottom: 55%;
-      }
-      @media (min-width:715px) and (max-width:767px){
-        width: 25%;
-        bottom: 55%;
-        right: 20%;
-      }
-      @media (min-width:768px) and (max-width:1200px){
-        bottom: 60%;
-        width: 25%;
       }
       @include respond-to('small') {
         bottom: 58%;

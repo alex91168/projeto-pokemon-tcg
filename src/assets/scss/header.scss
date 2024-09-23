@@ -102,3 +102,37 @@ header {
         opacity: 1;
     }
 }
+
+
+#emConstrução{
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 40%;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 26px;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    border: 1px solid $color-primary;
+    #close-emConstrução {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    @include respond-to('medium'){
+        width: 60%;
+    }
+    @include respond-to('small'){
+        width: 80%;
+    }
+
+}
+#emConstrução.active {
+    display: flex;
+}

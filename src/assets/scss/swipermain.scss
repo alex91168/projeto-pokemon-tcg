@@ -15,6 +15,12 @@
     //border-top: 3px solid $color-primary;
     border-bottom: 3px solid $color-primary;
     border-radius: 2%;
+    @include respond-to ('medium'){
+      width: 80%;
+      height: 400px;
+      margin: 40px 0;
+      border-bottom: 2px solid $color-primary;
+    }
     @include respond-to ('small'){
       width: 90%;
       height: 300px;
