@@ -15,13 +15,13 @@ Tecnologias utilizadas:
 Para o desenvolvimento deste site utilizei as seguintes tecnologias:
 
 - ReactJs;
-- Bibliotecas React: React-Route, Fuse, SwiperJs ,Bootstrap entre outras...
+- Bibliotecas React: React-Route, Fuse, SwiperJs, Bootstrap entre outras...
 - API: <a href="https://tcgdex.dev">TCGDex</a>
 - Sass;
 ---
 
 Imagens:
-<div style="display: flex; justify-content: center; flex-direction: row; width:300;">
+<div style="width:300px;">
     <img src="src/assets/images/iPhone.jpeg" alt="iPhone" style="margin: 10px;"/>
     <img src="src/assets/images/iPad.jpeg" alt="iPad" style="margin: 10px;"/>
     <img src="src/assets/images/MacBook.jpeg" alt="MacBook" style="margin: 10px;"/>
