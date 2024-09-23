@@ -22,8 +22,7 @@ export default function Catalog({results = []}) {
                         <div id="card-details-text" className={isDetails === x.localId ? 'active' : ''}>
                             <h2>{x.name}</h2>
                             <span>{x.rarity}</span>
-
-{/**                            {x.attacks && x.attacks.length> 0 ? (
+                            {x.attacks && x.attacks.length> 0 ? (
                                 x.attacks.map((attack, attackIndex) => {
                                     const effectId = (attack.effect ? <span style={{fontSize:12, wordBreak:'break-all'}}>Effect: {attack.effect}</span> : null)
                                     const attackName = (attack.name ? (
@@ -39,7 +38,8 @@ export default function Catalog({results = []}) {
                                         )
                                     }   
                                 )
-                            ): ''} */}                        </div>
+                            ): ''}
+                        </div>
                         <div id='btn-details' onClick={() => activeDetails(x.localId)}>
                             <span id='btn-border-details' className={isDetails === x.localId ? 'active' : '' }>
                                 <div className='product-swiper-border-black-gallery'></div>
@@ -48,7 +48,7 @@ export default function Catalog({results = []}) {
                             </span>
                         </div>
                     </div>
-{/**                    <div className='mobile-card-details'>
+                    <div className='mobile-card-details'>
                         <h2 style={{alignItems:'flex-start'}}>{x.name}</h2>
                         <span id='rarity-mobile-card-detais'>Rarity: {x.rarity}</span>
                         {x.attacks && x.attacks.length> 0 ? (
@@ -67,7 +67,7 @@ export default function Catalog({results = []}) {
                                 )
                             })
                         ):([''])}
-                    </div> */}
+                    </div>
                 </div>
             )
         })}
