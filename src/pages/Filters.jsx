@@ -145,7 +145,6 @@ export default function Filters() {
         let filterCards = cards;
 
         if(isTypeSelected.size > 0) {
-            //console.log("Teste:", Array.from(isTypeSelected)); 
             filterCards = filterCards.filter(card => Array.isArray(card.types) && card.types.some(type => isTypeSelected.has(type)));
         }
         if (query) {
@@ -185,7 +184,6 @@ export default function Filters() {
     const hiddenMobile = () => {
         setFilterHidden(false);
     }
-    console.log(typeP)
   return (
     <>
     {loading ? (
